@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class AnimalActivity extends ActionBarActivity {
 
     public static TextView output;
@@ -15,11 +17,40 @@ public class AnimalActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal);
         output = (TextView)findViewById(R.id.output);
-        //Step 10 -
+        //Step 10
         Duck duck = new Duck();
         Fish fish = new Fish();
-        this.output.append("\nDuck say ");
-        this.output.append("\nFish goes ");
+        Seal seal = new Seal();
+
+        ArrayList<Animal> animals = new ArrayList<Animal>();
+        animals.add(duck);
+        animals.add(fish);
+        animals.add(seal);
+
+        /*
+        //Step 22
+        for (int i = 0; i < animals.size(); i++) {
+            this.output.append("\n" + animals.get(i).animal() + " says " + animals.get(i).say());
+        }
+        */
+
+        //Step 23
+        for (Animal a : animals) {
+            this.output.append("\n" + a.animal() + " says "+ a.say());
+            //Step 27
+            if (a instanceof Seal) {
+                this.output.append("\n" + ((Seal)a).play());
+            }
+
+        };
+
+        /*
+
+        this.output.append("\nDuck say " + duck.say());
+        this.output.append("\nFish goes " + animals.get(1).say());
+        //Step 19
+        this.output.append("\nThe object at index 1: " + animals.get(1));
+        */
     }
 
     @Override

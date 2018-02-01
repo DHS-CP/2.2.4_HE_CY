@@ -9,4 +9,5 @@ package org.pltw.examples.animalapp;
 public abstract class Animal {
     //Step 5 - Creating abstract method say()
     public abstract String say();
+    public abstract String animal();
 }

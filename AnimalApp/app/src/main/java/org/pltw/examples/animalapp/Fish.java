@@ -14,4 +14,9 @@ public class Fish extends Animal {
     public String say() {
         return "Blub";
     }
+
+    //Step 22-23 declaration of animal
+    public String animal() {
+        return "Fish";
+    }
 }
